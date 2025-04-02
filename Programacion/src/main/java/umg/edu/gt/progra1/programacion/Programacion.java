@@ -26,7 +26,8 @@ public class Programacion {
         //obtenerNumerosColmillos();
         //Vectores.matrizExample();
         //obtenerVectores();
-        ReordenarValores();
+        //ReordenarValores();
+        encontrarObjetivo();
 
     }
 
@@ -181,7 +182,7 @@ public class Programacion {
         System.out.println("Suma maxima: " + resultados[1]);
     }*/
 
-    public static void ReordenarValores (){
+    /*public static void ReordenarValores (){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese la cantidad de numeros que quiere ordenar: ");
         int n = scanner.nextInt();
@@ -194,17 +195,41 @@ public class Programacion {
 
         VectoresEjercicios.ordenamientoDeNumeros(vector);
 
-        System.out.println("\nVector reordenado: [");
+        System.out.print("\nVector reordenado: [");
         for (int i = 0; i < vector.length; i++){
-            System.out.println(vector[i]);
+            System.out.print(vector[i]);
             if (i < vector.length - 1){
-                System.out.println(", ");
+                System.out.print(", ");
             }
         }
-        System.out.println("]");
+        System.out.print("]");
 
         scanner.close();
 
+    }*/
+
+    public static void encontrarObjetivo(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese la cantidad de numeros con los que quiere trabajar: ");
+        int n = scanner.nextInt();
+
+        int [] vector = new int[n];
+        System.out.println("Ingrese los " + n + " numeros enteros.");
+        for (int i = 0; i < n; i++){
+            vector[i] = scanner.nextInt();
+        }
+
+        System.out.print("Ingrese el numero objetivo: ");
+        int objetivo = scanner.nextInt();
+
+        int[] resultado = VectoresEjercicios.encontrarLaSumaDeDosNumeros(vector, objetivo);
+
+        if (resultado != null) {
+            System.out.printf("\n Par encontrado: (%d, %d)\n", resultado[0], resultado[1]);
+        }else {
+            System.out.println("\n No se encontro ningun par que sume el objetivo: " + objetivo);
+        }
+        scanner.close();
     }
 
 

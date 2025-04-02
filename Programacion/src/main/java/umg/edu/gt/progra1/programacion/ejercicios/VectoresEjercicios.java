@@ -89,6 +89,20 @@ public class VectoresEjercicios {
             X = 9
         * Ejemplo de salida: Par encontrado: (2, 7)
      */
+    public static int[] encontrarLaSumaDeDosNumeros (int[] vector2, int numeroObjetivo){
+        for (int i = 0; i < vector2.length; i ++){
+            for ( int j = i + 1; j < vector2.length; j++){
+                if (vector2[i] + vector2[j] == numeroObjetivo){
+                    return new int[]{vector2[i], vector2[j]};
+                }
+            }
+        }
+        return null;
+    }
+
+
+
+
     
     /**
      * Rotación Circular de un Vector
