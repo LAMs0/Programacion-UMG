@@ -8,8 +8,8 @@ package umg.edu.gt.progra1.programacion.ejercicios;
  *
  * @author wcord
  */
-public class Vectores {
-    
+public class VectoresEjercicios {
+
     /**
      * 📜 Descripción: Dado un vector de números enteros, encuentre la suma más pequeña y la suma más grande posibles al sumar (N-1) elementos del vector.
         🔹 Instrucciones:
@@ -22,6 +22,25 @@ public class Vectores {
           Suma mínima: 16  
           Suma máxima: 24  
      */
+
+    public static int[] sumaDeVectores (int [] vector){
+        if (vector.length == 0){
+            return new int [] {0,0};
+        }
+        int min = vector[0];
+        int max = vector[0];
+        int sumaTotal = 0;
+
+        for (int num : vector){
+            sumaTotal += num;
+            if (num < min) min = num;
+            if (num > max) max = num;
+        }
+
+        return new int[] {sumaTotal - max, sumaTotal - min};
+
+    }
+
     
     /**
      * Reordenamiento de Números Pares e Impares
@@ -33,6 +52,30 @@ public class Vectores {
         * Ejemplo de entrada: [3, 1, 2, 4, 5, 6]
         * Ejemplo de salida: [2, 4, 6, 3, 1, 5]
      */
+
+     public static void ordenamientoDeNumeros (int[] vector1){
+         int inicialPar = 0;
+
+         for (int i = 0; i < vector1.length; i ++){
+             if (vector1[i] % 2 == 0 ){
+                 int intercambiarElementos = vector1 [inicialPar];
+                 vector1[inicialPar] = vector1[i];
+                 vector1[i] = intercambiarElementos;
+                 inicialPar++;
+             }
+         }
+
+         for ( int i = inicialPar, j = i; i < vector1.length; i++){
+             if(vector1 [i] % 2 != 0){
+                 int intercambiarElementos = vector1 [j];
+                 vector1[j] = vector1[i];
+                 vector1[i] = intercambiarElementos;
+                 j++;
+             }
+         }
+
+
+     }
     
     /**
      * Encuentra los Dos Números que Suman un Valor

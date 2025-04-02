@@ -5,6 +5,8 @@
 package umg.edu.gt.progra1.programacion;
 
 import umg.edu.gt.progra1.programacion.ejercicios.Formulas;
+import umg.edu.gt.progra1.programacion.ejercicios.VectoresEjercicios;
+import umg.edu.gt.progra1.programacion.estructuraDeDatos.Vectores;
 
 import java.util.Scanner;
 import java.util.List;
@@ -21,8 +23,10 @@ public class Programacion {
         //palindromo();
         //palabraPalindrome();
         //ecuacionCuadratica();
-        obtenerNumerosColmillos();
-
+        //obtenerNumerosColmillos();
+        //Vectores.matrizExample();
+        //obtenerVectores();
+        ReordenarValores();
 
     }
 
@@ -65,7 +69,7 @@ public class Programacion {
         scanner.close();
     }*/
 
-    private static void obtenerNumerosColmillos(){
+    /*private static void obtenerNumerosColmillos(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Buscador de Números Vampiro");
@@ -98,7 +102,7 @@ public class Programacion {
         }
 
         scanner.close();
-    }
+    }*/
 
 
 
@@ -156,6 +160,52 @@ public class Programacion {
         
     }
     */
+
+    /*public static void testVectores(){
+        Vectores Vectores = new Vectores();
+    }*/
+
+    /*public static void obtenerVectores(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca la cantidad de cumeros que quiere sumar o restar: ");
+        int n = scanner.nextInt();
+
+        int [] vector = new int[n];
+        System.out.println("Ingrese los " + n + " numeros enteros.");
+        for (int i = 0; i < n; i ++){
+            vector[i] = scanner.nextInt();
+        }
+
+        int [] resultados = VectoresEjercicios.sumaDeVectores(vector);
+        System.out.println("Suma minima: " + resultados[0]);
+        System.out.println("Suma maxima: " + resultados[1]);
+    }*/
+
+    public static void ReordenarValores (){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese la cantidad de numeros que quiere ordenar: ");
+        int n = scanner.nextInt();
+
+        int[] vector = new int[n];
+        System.out.println("Ingrese los " + n + " numeros enteros. ");
+        for (int i = 0; i < n; i++){
+            vector[i] = scanner.nextInt();
+        }
+
+        VectoresEjercicios.ordenamientoDeNumeros(vector);
+
+        System.out.println("\nVector reordenado: [");
+        for (int i = 0; i < vector.length; i++){
+            System.out.println(vector[i]);
+            if (i < vector.length - 1){
+                System.out.println(", ");
+            }
+        }
+        System.out.println("]");
+
+        scanner.close();
+
+    }
 
 
 }

@@ -38,7 +38,7 @@ public class Vectores {
     
     // Arreglos bidimensionales
     // Matrices
-    public void matrizExample() {
+    public static void matrizExample() {
         
         int[][] matriz = {
             { 1, 2, 3},
