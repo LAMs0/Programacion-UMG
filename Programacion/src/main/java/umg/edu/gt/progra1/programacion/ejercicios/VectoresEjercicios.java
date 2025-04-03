@@ -99,10 +99,6 @@ public class VectoresEjercicios {
         }
         return null;
     }
-
-
-
-
     
     /**
      * Rotación Circular de un Vector
@@ -115,7 +111,32 @@ public class VectoresEjercicios {
         k = 2
         * Ejemplo de salida: [4, 5, 1, 2, 3]
      */
-    
+
+    public static void rotarUnVector (int [] vector, int K){
+        if (vector == null || vector.length == 0){
+            return;
+        }
+
+        K = K % vector.length;
+        if (K == 0 ){
+            return;
+        }
+
+        revertir(vector, 0, vector.length - 1);
+        revertir(vector, 0, K - 1);
+        revertir(vector, K, vector.length - 1);
+    }
+
+    public static void revertir(int[] vector, int inicio, int fin ){
+        while ( inicio < fin){
+            int rotacion = vector[inicio];
+            vector[inicio] = vector[fin];
+            vector[fin] = rotacion;
+            inicio ++;
+            fin --;
+        }
+    }
+
     /**
      * Subsecuencia Más Larga de Números Consecutivos
         📜 Descripción: Encuentre la subsecuencia más larga de números consecutivos en un vector desordenado.

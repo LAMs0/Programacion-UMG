@@ -27,7 +27,8 @@ public class Programacion {
         //Vectores.matrizExample();
         //obtenerVectores();
         //ReordenarValores();
-        encontrarObjetivo();
+        //encontrarObjetivo();
+        rotacionDeUnVector();
 
     }
 
@@ -208,7 +209,7 @@ public class Programacion {
 
     }*/
 
-    public static void encontrarObjetivo(){
+    /*public static void encontrarObjetivo(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese la cantidad de numeros con los que quiere trabajar: ");
         int n = scanner.nextInt();
@@ -230,7 +231,33 @@ public class Programacion {
             System.out.println("\n No se encontro ningun par que sume el objetivo: " + objetivo);
         }
         scanner.close();
-    }
+    }*/
 
+    public static void rotacionDeUnVector () {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese la cantidad de numeros: ");
+        int n = scanner.nextInt();
+
+        int[] vector = new int[n];
+        System.out.println("Ingrese los " + n + " numeros: ");
+        for (int i = 0; i < n; i++) {
+            vector[i] = scanner.nextInt();
+        }
+        System.out.print("Ingrese el numero de posiciones a rotar en K: ");
+        int K = scanner.nextInt();
+
+        VectoresEjercicios.rotarUnVector(vector, K);
+
+        System.out.print("\n Vector rotado: [");
+        for (int i = 0; i < vector.length; i++) {
+            System.out.print(vector[i]);
+            if (i < vector.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+        scanner.close();
+
+    }
 
 }
