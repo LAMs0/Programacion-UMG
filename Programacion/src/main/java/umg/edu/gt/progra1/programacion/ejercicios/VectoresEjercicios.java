@@ -4,6 +4,9 @@
  */
 package umg.edu.gt.progra1.programacion.ejercicios;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author wcord
@@ -146,5 +149,38 @@ public class VectoresEjercicios {
         * Ejemplo de entrada: [100, 4, 200, 1, 3, 2]
         * Ejemplo de salida: Mayor subsecuencia consecutiva: 4 (1, 2, 3, 4)
      */
-    
+
+    public static int subsecuenciaMasLarga (int[] numero){
+
+        if (numero == null || numero.length == 0 ){
+            return 0 ;
+        }
+
+        Set<Integer> conjunto = new HashSet<>();
+        for(int num : numero){
+            conjunto.add(num);
+        }
+
+        int maximaLongitud = 0;
+
+        for (int num : conjunto){
+            if (!conjunto.contains(num - 1)){
+
+                int longitudActual = 1;
+                int siguiente = num +1;
+
+                while (conjunto.contains(siguiente)){
+                    longitudActual++;
+                    siguiente++;
+                }
+
+                maximaLongitud = Math.max(maximaLongitud, longitudActual);
+
+            }
+        }
+
+        return maximaLongitud;
+
+    }
+
 }

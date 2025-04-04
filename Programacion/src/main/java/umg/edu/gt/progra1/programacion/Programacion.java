@@ -28,7 +28,9 @@ public class Programacion {
         //obtenerVectores();
         //ReordenarValores();
         //encontrarObjetivo();
-        rotacionDeUnVector();
+        //rotacionDeUnVector();
+        subsecuenciaMasLarga();
+
 
     }
 
@@ -233,7 +235,7 @@ public class Programacion {
         scanner.close();
     }*/
 
-    public static void rotacionDeUnVector () {
+    /*public static void rotacionDeUnVector () {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese la cantidad de numeros: ");
         int n = scanner.nextInt();
@@ -258,6 +260,25 @@ public class Programacion {
         System.out.println("]");
         scanner.close();
 
+    }*/
+
+    public static void subsecuenciaMasLarga(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese la cantidad de numeros: ");
+        int n = scanner.nextInt();
+
+        int[] vector = new int[n];
+        System.out.println("Ingrese los " + n + " numeros.");
+        for (int i = 0; i < n; i++){
+            vector[i] = scanner.nextInt();
+        }
+
+        int longitud = VectoresEjercicios.subsecuenciaMasLarga(vector);
+
+        System.out.println("\n Mayor subsecuencia consecutiva: " + longitud);
+        scanner.close();
     }
+
 
 }
