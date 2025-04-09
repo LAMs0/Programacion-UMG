@@ -16,6 +16,7 @@ public class Inventario {
         System.out.println("Precio total: " + calcularTotalInventario(productos));
 
         // Cuantos productos estan fuera de inventario?
+        System.out.println("Productos agotados " + totalInventario(productos));
 
         // Cuales son los productos disponibles?
 
@@ -31,6 +32,14 @@ public class Inventario {
         return precioTotal;
     }
 
-
+    private int  totalInventario(Producto[] productos){
+        int contador = 0;
+        for (Producto prod: productos) {
+            if (prod.getCantidad() == 0 || !prod.isEstado()) {
+                contador++;
+            }
+        }
+         return contador;
+    }
 
 }

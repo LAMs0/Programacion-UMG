@@ -7,6 +7,7 @@ package umg.edu.gt.progra1.programacion;
 import umg.edu.gt.progra1.programacion.ejercicios.Formulas;
 import umg.edu.gt.progra1.programacion.ejercicios.VectoresEjercicios;
 import umg.edu.gt.progra1.programacion.estructuraDeDatos.Vectores;
+import umg.edu.gt.progra1.programacion.impl.Inventario;
 
 import java.util.Scanner;
 import java.util.List;
@@ -29,9 +30,15 @@ public class Programacion {
         //ReordenarValores();
         //encontrarObjetivo();
         //rotacionDeUnVector();
-        subsecuenciaMasLarga();
+        //subsecuenciaMasLarga();
+        testInventario();
 
 
+    }
+
+    public static void testInventario() {
+        Inventario inventario = new Inventario();
+        inventario.inicializarInventario();
     }
 
 
@@ -262,7 +269,7 @@ public class Programacion {
 
     }*/
 
-    public static void subsecuenciaMasLarga(){
+    /*public static void subsecuenciaMasLarga(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese la cantidad de numeros: ");
@@ -278,7 +285,7 @@ public class Programacion {
 
         System.out.println("\n Mayor subsecuencia consecutiva: " + longitud);
         scanner.close();
-    }
+    }*/
 
 
 }

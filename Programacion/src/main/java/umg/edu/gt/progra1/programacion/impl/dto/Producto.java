@@ -73,4 +73,9 @@ public class Producto {
     public double calcularValorTotal() {
         return precio * cantidad;
     }
+
+    public boolean totalInventario(){
+        return cantidad == 0 || !estado;
+    }
+
 }
