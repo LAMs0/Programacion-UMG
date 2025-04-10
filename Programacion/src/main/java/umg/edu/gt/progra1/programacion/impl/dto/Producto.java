@@ -78,4 +78,8 @@ public class Producto {
         return cantidad == 0 || !estado;
     }
 
+    public boolean productosDisponible (){
+        return cantidad > 0 && estado;
+    }
+
 }

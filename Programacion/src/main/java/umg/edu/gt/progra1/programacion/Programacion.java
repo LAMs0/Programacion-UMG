@@ -9,6 +9,7 @@ import umg.edu.gt.progra1.programacion.ejercicios.VectoresEjercicios;
 import umg.edu.gt.progra1.programacion.estructuraDeDatos.Vectores;
 import umg.edu.gt.progra1.programacion.impl.Inventario;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
 
@@ -38,7 +39,9 @@ public class Programacion {
 
     public static void testInventario() {
         Inventario inventario = new Inventario();
-        inventario.inicializarInventario();
+        //inventario.inicializarInventario();
+        List<String> disponibles = inventario.inicializarInventario();
+        System.out.println("Productos disponibles: " + disponibles);
     }
 
 
