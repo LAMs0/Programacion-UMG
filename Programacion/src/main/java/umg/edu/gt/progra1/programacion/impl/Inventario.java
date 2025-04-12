@@ -24,17 +24,47 @@ public class Inventario {
 
         // Cuales son los productos disponibles?
 
-        List<String> disponibles = new ArrayList<>();
+        List<String> existente = new ArrayList<>();
         for (Producto prod: productos){
             if (prod.getCantidad() > 0 && prod.isEstado()){
-                disponibles.add(prod.getNombre());
+                existente.add(prod.getNombre());
             }
 
         }
 
         // Hacer una tabla para mostrar el inventario total
 
-        return disponibles;
+        System.out.println("\n = = = Inventario Total = = =");
+        System.out.println("Nombre\t\tCantidad\t\tPrecio\tTipo\t\tEstado");
+        System.out.println("--------------------------------------------------------------");
+
+        double valorTotal = 0;
+        int disponiblesProductos = 0;
+        int agotados = 0;
+
+        for(Producto prod: productos){
+            String estado = prod.getCantidad() > 0 && prod.isEstado() ? "Disponible" : "Agotado";
+            System.out.printf("%-10s\t%-8d\t%-8.2f\t%-10s\t%-10s%n",
+                            prod.getNombre(),
+                            prod.getCantidad(),
+                            prod.getPrecio(),
+                            prod.getTipo(),
+                            estado);
+            valorTotal += prod.calcularValorTotal();
+            if(estado.equals("Disponible")){
+                disponiblesProductos++;
+            }else {
+                agotados++;
+            }
+        }
+
+        System.out.println("---------------------------------------------------------------");
+        System.out.printf("Valor total: %.2f%n ", valorTotal);
+        System.out.println("Productos Disponibles: " + disponiblesProductos);
+        System.out.println("Productos Agotados: " + agotados);
+
+
+        return existente;
     }
 
 
@@ -55,10 +85,5 @@ public class Inventario {
         }
          return contador;
     }
-
-
-
-
-
 
 }
